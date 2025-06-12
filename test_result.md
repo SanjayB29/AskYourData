@@ -167,15 +167,18 @@ backend:
 
   - task: "Database Models and Storage"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented Dataset and Query models with MongoDB storage for datasets and query history"
+      - working: true
+        agent: "testing"
+        comment: "Database Models and Storage is working correctly. Successfully tested storing and retrieving datasets and queries from MongoDB. The models are properly defined and the data is correctly stored and retrieved."
 
 frontend:
   - task: "File Upload Interface"
