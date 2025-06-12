@@ -210,6 +210,7 @@ def test_natural_language_query_table():
     
     # Verify the code was generated
     assert len(data["generated_code"]) > 0, "Generated code should not be empty"
+    print(f"Generated code:\n{data['generated_code']}")
     
     # Check if we got a table result
     if data["result_type"] == "table":
