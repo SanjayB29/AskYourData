@@ -122,15 +122,18 @@ backend:
 
   - task: "Dataset Upload API"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented CSV/JSON file upload endpoint with data processing and storage in MongoDB"
+      - working: true
+        agent: "testing"
+        comment: "Dataset Upload API is working correctly. Successfully tested uploading both CSV and JSON files. The API correctly processes the files, extracts column information, and stores the data in MongoDB."
 
   - task: "Natural Language Query Processing"
     implemented: true
