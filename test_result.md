@@ -137,15 +137,18 @@ backend:
 
   - task: "Natural Language Query Processing"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented query endpoint that converts natural language to Python code and executes it safely"
+      - working: true
+        agent: "testing"
+        comment: "Natural Language Query Processing is working correctly. Successfully tested processing natural language queries and converting them to executable Python code. The system correctly handles different types of queries and generates appropriate code."
 
   - task: "Code Execution Engine"
     implemented: true
