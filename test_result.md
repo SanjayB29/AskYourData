@@ -152,15 +152,18 @@ backend:
 
   - task: "Code Execution Engine"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented safe code execution environment with matplotlib, seaborn, plotly support and base64 image encoding"
+      - working: true
+        agent: "testing"
+        comment: "Code Execution Engine is working correctly after fixing an issue with the execution environment. Fixed the __import__ not found error by providing proper access to built-in functions in the safe_globals dictionary. Successfully tested executing code that generates both tables and visualizations."
 
   - task: "Database Models and Storage"
     implemented: true
