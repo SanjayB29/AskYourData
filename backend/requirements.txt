@@ -26,7 +26,5 @@ typer>=0.9.0
 matplotlib>=3.8.0
 seaborn>=0.13.0
 plotly>=5.17.0
-emergentintegrations
+emergentintegrations --extra-index-url https://d33sy5i8bnduwe.cloudfront.net/simple/
 pillow>=10.0.0
-io
-base64
