@@ -191,10 +191,10 @@ def test_natural_language_query_table():
     
     dataset_id = datasets[0]["id"]
     
-    # Make a query that should return a table
+    # Make a query that should return a table - using a simpler query
     query_data = {
         "dataset_id": dataset_id,
-        "query_text": "Show me the total sales by category"
+        "query_text": "Calculate the sum of sales for each category and show it as a table"
     }
     
     response = requests.post(f"{BASE_URL}/query", json=query_data)
@@ -219,6 +219,7 @@ def test_natural_language_query_table():
         assert isinstance(data["result_data"]["data"], list), "Table data should be a list"
     elif data["result_type"] == "error":
         print(f"Query returned an error: {data.get('error_message')}")
+        print(f"Full error data: {data}")
     
     return data
 
