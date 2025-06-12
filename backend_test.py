@@ -235,10 +235,10 @@ def test_natural_language_query_chart():
     
     dataset_id = datasets[0]["id"]
     
-    # Make a query that should return a chart
+    # Make a query that should return a chart - using a simpler query
     query_data = {
         "dataset_id": dataset_id,
-        "query_text": "Create a bar chart of sales by product"
+        "query_text": "Create a simple bar chart showing sales for each product"
     }
     
     response = requests.post(f"{BASE_URL}/query", json=query_data)
@@ -254,6 +254,7 @@ def test_natural_language_query_chart():
     
     # Verify the code was generated
     assert len(data["generated_code"]) > 0, "Generated code should not be empty"
+    print(f"Generated code:\n{data['generated_code']}")
     
     # Check if we got a chart result
     if data["result_type"] == "chart":
@@ -270,6 +271,7 @@ def test_natural_language_query_chart():
         assert "<div" in data["result_data"]["data"], "Plotly HTML should contain div elements"
     elif data["result_type"] == "error":
         print(f"Query returned an error: {data.get('error_message')}")
+        print(f"Full error data: {data}")
     
     return data
 
