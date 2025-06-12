@@ -248,3 +248,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Initial implementation complete. Built full-stack 'Ask Your Data' application with Gemini LLM integration for natural language to code conversion, file upload system, safe code execution, and React frontend. Need to test backend APIs first, especially the LLM integration and query processing capabilities. Gemini API key is configured in .env file."
+  - agent: "testing"
+    message: "Completed testing of all backend components. All tests are now passing. Fixed an issue with the code execution environment where '__import__ not found' error was occurring. The fix involved providing proper access to built-in functions in the safe_globals dictionary. All backend APIs are now working correctly, including the LLM integration, dataset upload, natural language query processing, and code execution engine. The database models and storage are also working correctly."
