@@ -107,15 +107,18 @@ user_problem_statement: "Ask Your Data - Natural Language Query to Dashboard. Bu
 backend:
   - task: "LLM Integration with Gemini"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented Gemini 2.0 Flash Lite integration using emergentintegrations library for natural language to Python code conversion"
+      - working: true
+        agent: "testing"
+        comment: "LLM Integration with Gemini is working correctly. Successfully tested the integration by generating Python code from natural language queries. Fixed an issue with the code execution environment by providing proper access to built-in functions."
 
   - task: "Dataset Upload API"
     implemented: true
