@@ -176,9 +176,9 @@ class CodeExecutor:
     async def execute_code(self, code: str, df: pd.DataFrame) -> Dict[str, Any]:
         """Safely execute generated code"""
         try:
-            # Create a safe execution environment
+            # Create a safe execution environment with proper builtins
             safe_globals = {
-                '__builtins__': {},
+                '__builtins__': __builtins__,  # Provide access to built-ins including __import__
                 'df': df,
                 'pd': pd,
                 'np': np,
